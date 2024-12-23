@@ -1,7 +1,7 @@
 {
-  "name": "travex",
+  "name": "tenantvault",
   "version": "1.0.0",
-  "description": "TravexAI",
+  "description": "TenantVault",
   "main": "index.js",
   "scripts": {
     "prestart": "",
