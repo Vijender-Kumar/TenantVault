@@ -184,19 +184,19 @@ module.exports = (app, connection) => {
           };
 
         // Send email notification
-        // const subject = "Tenant Vault Dashboard user created.";
-        // const htmlcontent = await mails.genericMails("createuser", userData);
-        // const mailResp = await service.sendMail(
-        //   userData.email,
-        //   subject,
-        //   htmlcontent
-        // );
-        // if (!mailResp.messageId) {
-        //   throw {
-        //     success: false,
-        //     message: "User added, but error while sending mail, Mail will be sent automatically after sometime.",
-        //   };
-        // }
+        const subject = "Tenant Vault Dashboard user created.";
+        const htmlcontent = await mails.genericMails("createUser", userData);
+        const mailResp = await service.sendMail(
+          userData.email,
+          subject,
+          htmlcontent
+        );
+        if (!mailResp.messageId) {
+          throw {
+            success: false,
+            message: "User added, but error while sending mail, Mail will be sent automatically after sometime.",
+          };
+        }
 
         return res.send({
           message: "User created successfully.",
@@ -316,16 +316,16 @@ module.exports = (app, connection) => {
           };
 
         // Prepare email content
-        // const subject = "Password updated successfully";
-        // const htmlcontent = mails.genericMails("passwordreset", data);
+        const subject = "Password updated successfully";
+        const htmlcontent = mails.genericMails("passwordReset", data);
 
         // Send email notification
-        // const mailres = await service.sendMail(
-        //   data.email,
-        //   subject,
-        //   htmlcontent
-        // );
-        // if (!mailres) throw { message: "Password has been changed successfully, but error while sending mail, Mail will be sent automatically after sometime." };
+        const mailres = await service.sendMail(
+          data.email,
+          subject,
+          htmlcontent
+        );
+        if (!mailres) throw { message: "Password has been changed successfully, but error while sending mail, Mail will be sent automatically after sometime." };
 
         res.send({
           message:

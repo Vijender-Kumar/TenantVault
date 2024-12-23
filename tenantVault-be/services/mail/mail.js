@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
+const nodemailer = require("nodemailer");
+const smtpTransport = require("nodemailer-smtp-transport");
 
 const sendMail = async (email, subject, htmlcontent) => {
   try {
@@ -28,7 +28,7 @@ const sendMail = async (email, subject, htmlcontent) => {
     transporter.close();
     return sendMail;
   } catch (error) {
-    console.log('error==========', error);
+    console.log("error==========", error);
     return error;
   }
 };
