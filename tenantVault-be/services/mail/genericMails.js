@@ -11,7 +11,7 @@ const genericMails = (type, data) => {
                 : ""
             }
             <label><b>username : </b></label>${data.username}<br>
-            <label><b>password : </b></label>${data.userpassToEmail}<br><br>
+            <label><b>password : </b></label>${data.userpass}<br><br>
             Regards,<br>
             TENANT VAULT PVT LIMITED</div>`;
       break;
